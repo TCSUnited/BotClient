@@ -21,7 +21,7 @@ var connector = new builder.ChatConnector({
 
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
-
+var i=0;
 
 //=========================================================
 // Bots Middleware
@@ -59,7 +59,8 @@ bot.dialog('/', [
      
     function (session, results) {
         // Always say goodbye
-        session.beginDialog("/carousel1");
+       if(i!=2){ 
+       session.beginDialog("/carousel1");};
     },
     function (session, results) {
         // Always say goodbye
@@ -88,7 +89,7 @@ bot.dialog('/menu', [
         } else {
             // Exit the menu
             session.beginDialog('/carousel2');
-            session.beginDialog('/carousel1');
+            //session.beginDialog('/carousel1');
         }
     },
     //function (session, results) {
@@ -349,7 +350,8 @@ bot.dialog('/Meal', [
 ])//.reloadAction('reloadMenu', null, { matches: /^meal|show meal menu/i });
 
 bot.dialog('/carousel2', [
-        function (session) {
+   i=2;     
+   function (session) {
         session.send("Currently we are having great offers for Europe and North America....");
         builder.Prompts.text(session, "Please tell me the name of the city to which you want to fly, and I'll get you the best offers");
     },
