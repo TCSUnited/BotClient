@@ -21,7 +21,7 @@ var connector = new builder.ChatConnector({
 
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
-var i=0;
+
 
 //=========================================================
 // Bots Middleware
@@ -59,8 +59,8 @@ bot.dialog('/', [
      
     function (session, results) {
         // Always say goodbye
-       if(i!=2){ 
-       session.beginDialog("/carousel1");};
+       
+       session.beginDialog("/carousel1");
     },
     function (session, results) {
         // Always say goodbye
