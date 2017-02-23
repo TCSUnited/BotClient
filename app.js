@@ -372,7 +372,8 @@ bot.dialog('/carousel2', [
     function (session, results) {
         if (results.response && results.response.entity != 'No Thanks)') {
             // Launch demo dialog
-            session.beginDialog('/' + results.response.entity);
+           // session.beginDialog('/' + results.response.entity);
+           session.beginDialog('/paris');
         } else {
             // Exit the menu
             session.endDialog();
