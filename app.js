@@ -59,7 +59,7 @@ bot.dialog('/', [
      
     function (session, results) {
         // Always say goodbye
-        session.beginDialog("/Carousel1");
+        session.beginDialog("/carousel1");
     },
     function (session, results) {
         // Always say goodbye
