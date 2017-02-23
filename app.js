@@ -346,7 +346,7 @@ bot.dialog('/Meal', [
         session.endDialog("Thank You for placing the order");
     },  
 
-]).reloadAction('reloadMenu', null, { matches: /^meal|show meal menu/i });
+])//.reloadAction('reloadMenu', null, { matches: /^meal|show meal menu/i });
 
 bot.dialog('/carousel2', [
         function (session) {
